@@ -1,0 +1,43 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: msa-dashboard-service
+spec:
+  type: NodePort
+  selector:
+    app: msa-dashboard
+  ports:
+  - protocol: TCP
+    port: 8080
+    nodePort: 30002
+    targetPort: 8080
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: msa-dashboard
+  labels:
+    app: msa-dashboard
+    visualize: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: msa-dashboard
+  template:
+    metadata:
+      labels:
+        app: msa-dashboard
+        version: "1.0.1-RELEASE"
+    spec:
+      containers:
+      - name: msa-dashboard
+        image: docker.gsp.sicc.co.kr/dashboard:1.0.1-RELEASE
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: prd
+        - name: spring.cloud.config.uri
+          value: http://100.70.69.238:8888
+        ports:
+        - name: http
+          containerPort: 8080
