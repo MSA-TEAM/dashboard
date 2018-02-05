@@ -15,7 +15,7 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: msa-dashboard
+  name: msa-dashboard:1.0.1-RELEASE
   labels:
     app: msa-dashboard
     visualize: "true"
