@@ -45,6 +45,6 @@ node {
 
 
     stage('Deploy') {
-        sh 'sh 'kubectl apply -f deployment.yaml'
+        sh 'kubectl apply -f deployment.yaml'
     }
 }
