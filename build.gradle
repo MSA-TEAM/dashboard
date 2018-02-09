@@ -28,7 +28,7 @@ repositories {
 
 jar {
 	baseName = 'dashboard'
-	version =  '1.0.1-RELEASE'
+	version =  '1.0.1'
 }
 
 group = 'docker.gsp.sicc.co.kr'
