@@ -28,7 +28,7 @@ repositories {
 
 jar {
 	baseName = 'dashboard'
-	version =  '1.0.1'
+	version =  '1.0.2'
 }
 
 group = 'docker.gsp.sicc.co.kr'
@@ -40,7 +40,7 @@ docker {
 }
 
 ext {
-	springCloudVersion = 'Edgware.SR1'
+	springCloudVersion = 'Edgware.SR2'
 }
 
 dependencies {
