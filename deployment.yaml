@@ -29,6 +29,8 @@ spec:
         app:  msa-turbin
         version: "1.0.2"
     spec:
+      hostname: dashboard
+      subdomain: msa-turbin
       containers:
       - name: msa-turbin
         image: docker.gsp.sicc.co.kr/dashboard:1.0.2
